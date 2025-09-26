@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ページのタイトル -->
+    <title>浜田高校 オープンスクール 2025</title>
+    
+    <!-- Tailwind CSSの読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fontsの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* カスタムスタイル */
+        /* フォント設定：日本語は 'M PLUS Rounded 1c', 英数字は 'Poppins' を優先 */
+        body {
+            font-family: 'M PLUS Rounded 1c', 'Poppins', sans-serif;
+            background-color: #f0f7ff; /* 明るい空の色 */
+        }
+
+        /* 巨大なタイトルテキストにアニメーション効果を追加 */
+        .hero-title {
+            font-family: 'Poppins', 'M PLUS Rounded 1c', sans-serif;
+            font-weight: 900;
+            text-shadow: 
+                0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(0, 183, 255, 0.6),
+                0 0 30px rgba(0, 183, 255, 0.4);
+            animation: glow 2.5s ease-in-out infinite alternate;
+        }
+
+        /* テキストのグロー（発光）アニメーション */
+        @keyframes glow {
+            from {
+                text-shadow: 
+                    0 0 5px rgba(255, 255, 255, 0.7),
+                    0 0 10px rgba(0, 183, 255, 0.5),
+                    0 0 15px rgba(0, 183, 255, 0.3);
+            }
+            to {
+                text-shadow: 
+                    0 0 10px rgba(255, 255, 255, 0.9),
+                    0 0 25px rgba(0, 183, 255, 0.8),
+                    0 0 40px rgba(0, 183, 255, 0.6);
+            }
+        }
+        
+        /* 波のアニメーション */
+        .waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15vh;
+            min-height: 100px;
+            max-height: 150px;
+        }
+
+        .parallax > use {
+            animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+        }
+        .parallax > use:nth-child(1) {
+            animation-delay: -2s;
+            animation-duration: 7s;
+            fill: rgba(255,255,255,0.7);
+        }
+        .parallax > use:nth-child(2) {
+            animation-delay: -3s;
+            animation-duration: 10s;
+            fill: rgba(255,255,255,0.5);
+        }
+        .parallax > use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 13s;
+            fill: rgba(255,255,255,0.3);
+        }
+        .parallax > use:nth-child(4) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+            fill: #ffffff;
+        }
+
+        @keyframes move-forever {
+            0% {
+                transform: translate3d(-90px,0,0);
+            }
+            100% { 
+                transform: translate3d(85px,0,0);
+            }
+        }
+
+        /* スクロールに応じたアニメーション */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ボタンのホバーエフェクト */
+        .btn-hover-effect {
+            transition: all 0.3s ease;
+        }
+        .btn-hover-effect:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body class="bg-blue-50 text-gray-800">
+
+    <!-- ヘッダーセクション -->
+    <header class="relative bg-gradient-to-b from-sky-400 to-blue-500 h-[80vh] min-h-[600px] flex items-center justify-center text-center text-white overflow-hidden">
+        <div class="z-10 p-4">
+            <h2 class="text-xl md:text-2xl font-bold mb-4" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">HAMADA HIGH SCHOOL OPEN SCHOOL 2025</h2>
+            <h1 class="hero-title text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-2">浜田高校</h1>
+            <p class="text-3xl md:text-5xl font-extrabold" style="text-shadow: 2px 2px 5px rgba(0,0,0,0.3);">オープンスクール</p>
+            <p class="mt-8 text-2xl md:text-3xl font-bold bg-yellow-400 text-blue-800 inline-block px-6 py-2 rounded-full shadow-lg">8月24日 (土) 開催！</p>
+        </div>
+        
+        <!-- 波のSVGアニメーション -->
+        <div class="waves">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" />
+                </g>
+            </svg>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="container mx-auto px-6 py-16">
+
+        <!-- イントロダクション -->
+        <section class="text-center mb-20 reveal">
+            <h2 class="text-3xl md:text-4xl font-black text-blue-600 mb-4">未来の浜高生、集まれ！</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                浜田高校のオープンスクールへようこそ！<br>
+                「高校生活ってどんな感じ？」「どんな勉強ができるの？」「部活動は何があるの？」<br>
+                そんな君の「知りたい！」が全部わかる特別な一日。<br>
+                最高の仲間たちと、最高の高校生活を体験しに来てね！
+            </p>
+        </section>
+
+        <!-- 昨年の写真ギャラリー -->
+        <section class="mb-20 reveal">
+            <h2 class="text-center text-3xl md:text-4xl font-black text-blue-600 mb-8">
+                <span class="bg-yellow-300 px-4 rounded-md">去年の様子をのぞいてみよう！</span>
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 写真をここに挿入 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/3498db/ffffff?text=授業体験" alt="授業体験の様子" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">わくわく授業体験</h3>
+                        <p class="text-sm text-gray-600">先輩たちが優しく教えてくれるよ！</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/2ecc71/ffffff?text=部活動見学" alt="部活動見学の様子" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">熱血！部活動見学</h3>
+                        <p class="text-sm text-gray-600">文化部も運動部も、みんな輝いてる！</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/e74c3c/ffffff?text=在校生と交流" alt="在校生との交流の様子" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">先輩とフリートーク</h3>
+                        <p class="text-sm text-gray-600">リアルな学校生活について聞いちゃおう！</p>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/9b59b6/ffffff?text=学校探検" alt="学校探検の様子" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">わくわく学校探検</h3>
+                        <p class="text-sm text-gray-600">広くてきれいな校舎を探検！</p>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/f1c40f/ffffff?text=ランチタイム" alt="ランチタイムの様子" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">楽しいランチタイム</h3>
+                        <p class="text-sm text-gray-600">学食の人気メニューも食べられるかも？</p>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/1abc9c/ffffff?text=笑顔" alt="参加者の笑顔" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">みんな最高の笑顔！</h3>
+                        <p class="text-sm text-gray-600">来年は君がこの場所にいるかも！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- イベントの見どころ -->
+        <section class="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-20 reveal">
+            <h2 class="text-center text-3xl md:text-4xl font-black text-blue-600 mb-10">オープンスクールの見どころ！</h2>
+            <div class="space-y-8">
+                <!-- ポイント1 -->
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="bg-green-400 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl font-bold flex-shrink-0">1</div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">体験授業で未来を先取り！</h3>
+                        <p>プログラミング、国際交流、サイエンス実験など、浜高ならではの専門的な授業を体験できる！自分の「好き」が見つかるチャンス！</p>
+                    </div>
+                </div>
+                <!-- ポイント2 -->
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="bg-orange-400 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl font-bold flex-shrink-0">2</div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">部活動の魅力にダイブ！</h3>
+                        <p>全国レベルの運動部から、ユニークな文化部まで、浜高の部活動はとにかくアツい！先輩たちのパフォーマンスは必見！</p>
+                    </div>
+                </div>
+                <!-- ポイント3 -->
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="bg-purple-400 text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl font-bold flex-shrink-0">3</div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">在校生と直接話せる交流会！</h3>
+                        <p>勉強のこと、学校行事のこと、休日の過ごし方まで。優しくて面白い先輩たちが、みんなの質問に何でも答えてくれるよ！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 申し込みセクション -->
+        <section class="text-center bg-gradient-to-r from-yellow-300 to-orange-300 rounded-2xl p-10 reveal">
+            <h2 class="text-3xl md:text-4xl font-black text-gray-800 mb-4">参加申し込みはこちらから！</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">友達や保護者の方との参加も大歓迎！<br>下のボタンから申し込みフォームに進んでね。</p>
+            <button class="btn-hover-effect bg-blue-600 text-white font-bold text-2xl py-4 px-10 rounded-full shadow-lg">
+                今すぐ申し込む！
+            </button>
+            <p class="mt-4 text-sm text-gray-700">申し込み締め切り: 8月10日 (土)</p>
+        </section>
+
+    </main>
+    
+    <!-- フッター -->
+    <footer class="bg-blue-800 text-white text-center p-6">
+        <p class="font-bold">島根県立浜田高等学校</p>
+        <p class="text-sm">〒697-0016 島根県浜田市野原町1646-2</p>
+        <p class="text-sm mt-2">&copy; 2025 Hamada High School. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // スクロールで要素を表示させるアニメーション
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // 一度表示されたら監視を解除
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // 10%見えたら発動
+        });
+
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
